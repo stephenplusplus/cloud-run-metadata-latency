@@ -1,6 +1,6 @@
 const http = require('http')
 
-const METADATA_SERVICE = 'http://metadata.google.internal./computeMetadata/v1/instance'
+const METADATA_SERVICE = 'http://metadata.google.internal./computeMetadata/v1/instance/'
 
 http
   .createServer((req, res) => {
@@ -11,8 +11,9 @@ http
       },
     }, resp => {
       const elapsedTime = Date.now() - startTime
-      console.log(`Metadata request time: ${elapsedTime}ms`)
-      res.end(`Metadata request time: ${elapsedTime}ms`)
+      console.log('Response Headers', resp.headers)
+      res.write(`Status: ${resp.statusCode}, Metadata request time: ${elapsedTime}ms`)
+      resp.pipe(res)
     })
   })
   .listen(8080)
