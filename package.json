@@ -1,0 +1,14 @@
+{
+  "name": "cloud-run-latency-test",
+  "private": true,
+  "version": "1.0.0",
+  "description": "",
+  "main": "src/index.js",
+  "scripts": {
+    "deploy": "gcloud builds submit --tag gcr.io/nth-circlet-705/cloud-run-latency-test"
+  },
+  "author": "Stephen",
+  "license": "MIT",
+  "dependencies": {
+  }
+}
