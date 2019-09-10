@@ -1,6 +1,6 @@
 const http = require('http')
 
-const METADATA_SERVICE = 'http://metadata.google.internal./computeMetadata/v1/instance/'
+const METADATA_SERVICE = 'http://metadata.google.internal./computeMetadata/v1/project/project-id'
 
 http
   .createServer((req, res) => {
